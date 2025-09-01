@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Solar System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117;
+            color: #e6edf3;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .header-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-white min-h-screen flex items-center justify-center">
+
+    <div class="container bg-gray-800 rounded-2xl shadow-lg p-8">
+        <div class="header-container">
+            <h1 id="main-heading" class="text-4xl md:text-5xl font-bold mb-4">Our Solar System</h1>
+            <img src="https://placehold.co/400x300/1e293b/e2e8f0?text=Solar+System"
+                onerror="this.src='https://placehold.co/400x300/1e293b/e2e8f0?text=Solar+System'"
+                alt="Solar System placeholder image" class="rounded-xl w-full md:w-3/4 lg:w-1/2">
+        </div>
+        <div id="content-container" class="text-left text-lg leading-relaxed">
+            <!-- Content will be added here by JavaScript -->
+        </div>
+    </div>
+
+    <script>
+        // Use a DOMContentLoaded listener to ensure the script runs after the page is fully loaded.
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // 1. Get the container element where we will add the description.
+            const contentContainer = document.getElementById('content-container');
+
+            // 2. Create a new paragraph element for the description.
+            const descriptionParagraph = document.createElement('p');
+            descriptionParagraph.classList.add('text-gray-300', 'p-4', 'rounded-lg', 'bg-gray-700', 'mb-4');
+
+            // 3. Set the text content for the new element.
+            descriptionParagraph.textContent = `
+                The solar system is a vast and fascinating place, home to our planet Earth and seven other planets that orbit the Sun. 
+                It also includes a variety of other celestial objects, such as moons, asteroids, and comets. 
+                The Sun, a massive star, is at the center of it all, providing the light and heat that make life possible.
+            `;
+
+            // 4. Add the new paragraph element to the container.
+            contentContainer.appendChild(descriptionParagraph);
+
+            // 5. Create and add another paragraph to demonstrate adding multiple elements.
+            const funFactParagraph = document.createElement('p');
+            funFactParagraph.classList.add('text-gray-300', 'p-4', 'rounded-lg', 'bg-gray-700');
+            funFactParagraph.textContent = `
+                Did you know that Jupiter is so large that all the other planets in our solar system could fit inside it? 
+                It's a true giant!
+            `;
+            contentContainer.appendChild(funFactParagraph);
+        });
+    </script>
+
+</body>
+
+</html>
